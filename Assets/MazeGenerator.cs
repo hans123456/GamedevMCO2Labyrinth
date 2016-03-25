@@ -10,6 +10,7 @@ public class MazeGenerator : MonoBehaviour {
 	public int width, height;
 	public int startX, startZ;
 	public GameObject plane;
+	public GameObject goal;
 
 	public Material brick;
 	private int[,] Maze;
@@ -57,6 +58,17 @@ public class MazeGenerator : MonoBehaviour {
 		Camera.main.orthographic = true;
 		Camera.main.orthographicSize = 30;
 		GenerateMaze();
+		SetGoal ();
+	}
+
+	void SetGoal()
+	{
+		int posX, posY;
+		do {
+			posX = (int) UnityEngine.Random.Range(-startX, width-startX);
+			posY = (int) UnityEngine.Random.Range(-startZ, height-startZ);
+		} while(Maze [posX+startX, posY+startZ] == 1);
+		goal.transform.position = new Vector3 (posX, 0.5f, posY);
 	}
 
 	void GenerateMaze()
