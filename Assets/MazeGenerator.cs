@@ -4,7 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class MazeGenerator : MonoBehaviour {
-	
+
+	// http://forum.unity3d.com/threads/quick-maze-generator.173370/
+
 	public int width, height;
 	public int startX, startZ;
 	public GameObject plane;
