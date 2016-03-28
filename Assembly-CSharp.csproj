@@ -45,8 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Controller.cs" />
+     <Compile Include="Assets\CollisionDetector.cs" />
      <Compile Include="Assets\MazeGenerator.cs" />
+     <Compile Include="Assets\MenuScript.cs" />
      <Compile Include="Assets\MovementScript.cs" />
      <Compile Include="Assets\PlaneScript.cs" />
      <Compile Include="Assets\TopViewScript.cs" />

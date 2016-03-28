@@ -3,15 +3,16 @@ using System.Collections;
 
 public class TopViewScript : MonoBehaviour {
 
+	public float speedOfRotation;
+	public GameObject targetGameObject;
+	public MenuScript menu;
+	private Vector3 targetPosition;
 	private Quaternion defaultRotation;
 	private Vector3 defaultPosition;
-	public float speedOfRotation;
 
-	private Vector3 targetPosition;
-	private float max = 20;
+	private float max = 10;
 	private float accuX = 0;
 	private float accuZ = 0;
-	public GameObject targetGameObject;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +23,11 @@ public class TopViewScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		if (menu.isVisible == true) {
+			return;
+		}
+
 		float moveZ = Input.GetKey (KeyCode.LeftArrow) ? -1 : Input.GetKey (KeyCode.RightArrow) ? 1 : 0;
 		float moveX = Input.GetKey (KeyCode.UpArrow) ? -1 : Input.GetKey (KeyCode.DownArrow) ? 1 : 0;
 
@@ -32,13 +37,13 @@ public class TopViewScript : MonoBehaviour {
 			accuX = accuZ = 0;
 		}
 
-		if (moveX + accuX < max && moveX + accuX > -max) {
+		if (moveX + accuX < defaultRotation.x + max && moveX + accuX > defaultRotation.x - max) {
 			accuX += moveX;
 		} else {
 			moveX = 0;
 		}
 
-		if (moveZ + accuZ < max && moveZ + accuZ > -max) {
+		if (moveZ + accuZ < defaultRotation.z + max && moveZ + accuZ > defaultRotation.z - max) {
 			accuZ += moveZ;
 		} else {
 			moveZ = 0;

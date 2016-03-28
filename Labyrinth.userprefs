@@ -1,11 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MazeGenerator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MovementScript.cs">
     <Files>
-      <File FileName="Assets\Controller.cs" Line="14" Column="3" />
-      <File FileName="Assets\TopViewScript.cs" Line="11" Column="23" />
-      <File FileName="Assets\MovementScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\MazeGenerator.cs" Line="8" Column="4" />
+      <File FileName="Assets\TopViewScript.cs" Line="35" Column="9" />
+      <File FileName="Assets\MovementScript.cs" Line="32" Column="3" />
+      <File FileName="Assets\MazeGenerator.cs" Line="60" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

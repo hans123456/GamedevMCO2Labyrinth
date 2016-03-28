@@ -5,9 +5,11 @@ public class MovementScript : MonoBehaviour {
 
 	public float speed;
 	public Rigidbody rigidBody;
+	public MenuScript menu;
+
 	private float horizontalSpeed = 0;
 	private float verticalSpeed = 0;
-	private float limit = 30;
+	private float limit = 20;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +18,10 @@ public class MovementScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (menu.isVisible == true) {
+			return;
+		}
 
 		float moveHorizontal = Input.GetKey (KeyCode.LeftArrow) ? -1 : Input.GetKey (KeyCode.RightArrow) ? 1 : 0;
 		float moveVertical = Input.GetKey (KeyCode.UpArrow) ? 1 : Input.GetKey (KeyCode.DownArrow) ? -1 : 0;
@@ -28,7 +34,7 @@ public class MovementScript : MonoBehaviour {
 			verticalSpeed += moveVertical;
 		}
 
-		Physics.gravity = new Vector3 (horizontalSpeed * Time.deltaTime * speed, -9.8f, verticalSpeed * Time.deltaTime * speed);
+		Physics.gravity = new Vector3 (horizontalSpeed * speed, -9.8f, verticalSpeed * speed);
 
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			Physics.gravity = new Vector3 (0, -9.8f, 0);
