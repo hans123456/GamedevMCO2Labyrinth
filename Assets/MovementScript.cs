@@ -9,7 +9,7 @@ public class MovementScript : MonoBehaviour {
 
 	private float horizontalSpeed = 0;
 	private float verticalSpeed = 0;
-	private float limit = 20;
+	private float limit = 10;
 
 	// Use this for initialization
 	void Start () {
@@ -34,7 +34,7 @@ public class MovementScript : MonoBehaviour {
 			verticalSpeed += moveVertical;
 		}
 
-		Physics.gravity = new Vector3 (horizontalSpeed * speed, -9.8f, verticalSpeed * speed);
+		Physics.gravity = new Vector3 (horizontalSpeed * speed * Time.deltaTime, -9.8f, verticalSpeed * speed * Time.deltaTime);
 
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			Physics.gravity = new Vector3 (0, -9.8f, 0);
